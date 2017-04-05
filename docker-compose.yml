@@ -1,0 +1,72 @@
+version: '3'
+
+
+networks:
+    front:
+        driver: bridge
+    back:
+        driver: bridge
+
+
+volumes:
+    influxdb-varlib:
+    chronograf-varlib:
+    chronograf-usrshare:
+    kapacitor-varlib:
+
+
+services:
+
+    telegraf: # 1 - Telegraf (collection)
+        build:
+            context: ./
+            dockerfile: ./build/Dockerfile-telegraf
+        hostname: telegraf
+        #image: telegraf:1.2
+        networks:
+            - back
+        #ports:
+            #- "8092:8092/udp"
+            #- "8094:8094"
+            #- "8125:8125/udp"
+
+    influxdb: # 2 - InfluxDB (storage)
+        # CLI: docker exec -it tempr_influxdb_1 influx
+        build:
+            context: ./
+            dockerfile: ./build/Dockerfile-influxdb
+        #image: influxdb:1.2
+        volumes:
+            - influxdb-varlib:/var/lib/influxdb
+        networks:
+            - back
+        #ports:
+        #- "8086:8086"
+
+    chronograf: # 3 - Chronograf (visualization)
+        build:
+            context: ./
+            dockerfile: ./build/Dockerfile-chronograf
+        #image: chronograf:0.13
+        volumes:
+            - chronograf-varlib:/var/lib/chronograf
+            - chronograf-usrshare:/usr/share/chronograf
+        networks:
+            - back
+        ports:
+            - "8888:8888"
+
+    kapacitor: # 4 - Kapacitor (processing)
+        # CLI: docker exec -it tempr_kapacitor_1 bash
+        image: kapacitor:1.2
+        environment:
+            KAPACITOR_HOSTNAME: kapacitor
+            KAPACITOR_INFLUXDB_0_URLS_0: http://influxdb:8086
+        volumes:
+            - kapacitor-varlib:/var/lib/kapacitor
+        networks:
+            - back
+        ports:
+            - "9092:9092"
+
+

@@ -1,0 +1,7 @@
+FROM telegraf:1.2
+
+#EXPOSE 8092:8092/udp
+#EXPOSE 8094:8094/tcp
+#EXPOSE 8125:8125/udp
+
+COPY ./etc/telegraf.conf /etc/telegraf/telegraf.conf

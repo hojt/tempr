@@ -1,0 +1,7 @@
+FROM influxdb:1.2
+
+#EXPOSE 8086:8086
+
+COPY ./etc/influxdb.conf /etc/influxdb/influxdb.conf
+
+#VOLUME ./data/influxdb /var/lib/influxdb

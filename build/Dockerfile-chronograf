@@ -1,0 +1,12 @@
+#FROM chronograf:1.0.0-rc1
+FROM quay.io/influxdb/chronograf:latest
+#FROM chronograf:latest
+
+#EXPOSE 10000:10000
+#EXPOSE 8888:8888
+
+COPY ./etc/chronograf.conf /etc/chronograf/chronograf.conf
+
+#VOLUME ./data/chronograf:/var/lib/chronograf
+
+#ENV CHRONOGRAF_BIND 0.0.0.0:10000
