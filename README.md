@@ -12,7 +12,7 @@ Prerequisites
 Get started
 -----------
 1. docker-compose up
-2. Access Chronograf GUI @ http://&lt;DOCKER-HOST-IP&gt;:8888
+2. Access Chronograf GUI @ http://localhost:8888 (substitute localhost for docker host IP)
 3. Configure Chronograf's InfluxDB connection to http://influxdb:8086
 4. Configure Chronograf's Kapacitor conneciton to http://kapacitor:9092
 
