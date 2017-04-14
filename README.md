@@ -20,3 +20,4 @@ Configure
 ---------
 1. Configure input plugins in Telegraf through etc/telegraf.conf
 2. Re-start according to "Get started" section above
+3. Configure graphs in Chronograf GUI
