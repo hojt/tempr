@@ -1,13 +1,13 @@
 tempr
 ====
-Proof-of-concept setup with TICK-stack. Logging of temperatures with Telegraf, stored in InfluxDB, visualization with Chronograf and optionally processing with Kapacitor.
+Proof-of-concept setup with [TICK-stack](https://www.influxdata.com/products/open-source/). Logging of temperatures with [Telegraf](https://docs.influxdata.com/telegraf), stored in [InfluxDB](https://docs.influxdata.com/influxdb), visualization with [Chronograf](https://docs.influxdata.com/chronograf) and optionally processing with [Kapacitor](https://docs.influxdata.com/kapacitor).
 
 *N.B: All security-related features (authorization, authentication, etc) are disabled in this setup. Keep this as far as possible away from any production-like use.*
 
 Prerequisites
 -------------
-* docker
-* docker-compose
+* [docker](https://www.docker.com/community-edition)
+* [docker-compose](https://docs.docker.com/compose/overview/)
 
 Get started
 -----------
