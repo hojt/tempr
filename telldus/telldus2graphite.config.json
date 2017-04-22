@@ -1,0 +1,5 @@
+{
+  "graphiteUrl": "plaintext://telegraf:8094/",
+  "format": "client.sensor.type",
+  "logLevel": "INFO"
+}

@@ -1,1 +1,4 @@
 data
+telldus/node_modules
+secrets
+telldus/telldus-secrets.json

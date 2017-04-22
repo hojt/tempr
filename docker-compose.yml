@@ -25,10 +25,12 @@ services:
         #image: telegraf:1.2
         networks:
             - back
+        depends_on:
+            - influxdb
         #ports:
-            #- "8092:8092/udp"
-            #- "8094:8094"
-            #- "8125:8125/udp"
+        #- "8092:8092/udp"
+        #- "8094:8094"
+        #- "8125:8125/udp"
 
     influxdb: # 2 - InfluxDB (storage)
         # CLI: docker exec -it tempr_influxdb_1 influx
@@ -53,6 +55,8 @@ services:
             - chronograf-usrshare:/usr/share/chronograf
         networks:
             - back
+        depends_on:
+            - influxdb
         ports:
             - "8888:8888"
 
@@ -66,7 +70,16 @@ services:
             - kapacitor-varlib:/var/lib/kapacitor
         networks:
             - back
+        depends_on:
+            - influxdb
         ports:
             - "9092:9092"
 
+    telldus:
+        build:
+            context: ./telldus/
+        networks:
+            - back
+        depends_on:
+            - telegraf
 
