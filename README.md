@@ -23,7 +23,7 @@ Get started
 
 Configure
 ---------
-1. Configure graphs and dashboards in Chronograf GUI
+1. Configure graphs and dashboards in Chronograf GUI @ http://localhost:8888 (substitute localhost for docker host IP)
 
 Save OAuth tokens
 -----------------
