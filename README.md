@@ -1,6 +1,8 @@
 tempr
 ====
-Proof-of-concept setup with [TICK-stack](https://www.influxdata.com/products/open-source/). Logging of temperatures from [Telldus Live](https://live.telldus.com/) with [Telegraf](https://docs.influxdata.com/telegraf), stored in [InfluxDB](https://docs.influxdata.com/influxdb), visualization with [Chronograf](https://docs.influxdata.com/chronograf) and optionally processing with [Kapacitor](https://docs.influxdata.com/kapacitor).
+Proof-of-concept setup with [TICK-stack](https://www.influxdata.com/products/open-source/).
+
+Logging of temperatures from [Telldus Live](https://live.telldus.com/) with [Telegraf](https://docs.influxdata.com/telegraf), stored in [InfluxDB](https://docs.influxdata.com/influxdb), visualization with [Chronograf](https://docs.influxdata.com/chronograf) and optionally processing with [Kapacitor](https://docs.influxdata.com/kapacitor).
 
 *N.B: All security-related features (authorization, authentication, etc) are disabled in this setup. Keep this as far as possible away from any production-like use.*
 
@@ -26,7 +28,8 @@ Configure
 Save OAuth tokens
 -----------------
 1. Get OAuth tokens from api.telldus.com
-2. Create file ./telldus/telldus-secrets.json using template below, input your token data.
+2. Create file ./telldus/telldus-secrets.json using template below
+3. Replace "...":s with your token data
 
 ```JSON
 {
