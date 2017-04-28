@@ -29,7 +29,7 @@ Save OAuth tokens
 -----------------
 1. Get OAuth tokens from api.telldus.com
 2. Create file ./telldus/telldus-secrets.json using template below
-3. Replace "...":s with your token data
+3. Replace `"..."`:s with your token data
 
 ```JSON
 {
