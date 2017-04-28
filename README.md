@@ -27,7 +27,7 @@ Configure
 
 Save OAuth tokens
 -----------------
-1. Get OAuth tokens from api.telldus.com
+1. Get [OAuth tokens from api.telldus.com](http://api.telldus.com/keys/index) from your Telldus Live account
 2. Create file ./telldus/telldus-secrets.json using template below
 3. Replace `"..."`:s with your token data
 
